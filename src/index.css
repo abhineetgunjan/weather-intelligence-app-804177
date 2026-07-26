@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: 'Space Mono', monospace;
+  --color-cyber-bg: #050505;
+  --color-cyber-panel: rgba(20, 20, 20, 0.8);
+  --color-cyber-border: #1A1A1A;
+  --color-cyber-cyan: #00FFFF;
+  --color-cyber-magenta: #FF00FF;
+  --color-cyber-lime: #39FF14;
+  --color-cyber-red: #FF3333;
+  --color-cyber-gray: #A0A0A0;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: var(--color-cyber-bg);
+  color: #fff;
+}
+
+@keyframes scanline {
+  0% {
+    box-shadow: 0 0 0 1px var(--color-cyber-cyan);
+  }
+  50% {
+    box-shadow: 0 0 10px 1px var(--color-cyber-cyan), 0 0 0 1px var(--color-cyber-cyan) inset;
+  }
+  100% {
+    box-shadow: 0 0 0 1px var(--color-cyber-cyan);
+  }
+}
+
+.cyber-panel-active {
+  animation: scanline 2s infinite;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cyber-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-cyber-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyber-cyan);
+}
